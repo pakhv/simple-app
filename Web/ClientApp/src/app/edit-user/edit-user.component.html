@@ -1,0 +1,33 @@
+<h2>Редактирование/Создание пользователя</h2>
+<br>
+
+<div class="row">
+    <div class="col-2">
+        <span class="align-bottom">Имя</span>
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.firstName" class="form-control mr-1" placeholer="Имя">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-2">
+        <span class="align-bottom">Фамилия</span>
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="user.lastName" class="form-control mr-1" placeholer="Фамилия">
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-2">
+        <span class="align-bottom">Id Отдела</span>
+    </div>
+    <div>
+        <input type="number" [(ngModel)]="user.departmentId" class="form-control mr-1" placeholer="Id Отдела">
+    </div>
+</div>
+
+<br>
+<button type="button" class="btn btn-primary mr-1" (click)="saveUser()" [disabled]="!idValid()">Сохранить</button>
+<button type="button" class="btn btn-danger mr-1" (click)="cancel()">Отмена</button>

@@ -1,0 +1,32 @@
+<h2 id="tableLabel">Пользователи</h2>
+
+<p *ngIf="!users"><em>Loading...</em></p>
+
+<div>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="users">
+    <thead class="thead-dark">
+      <tr>
+        <th style="width: 10%">Id</th>
+        <th style="width: 30%">Имя</th>
+        <th style="width: 30%">Фамилия</th>
+        <th style="width: 10%">Id Отдела</th>
+        <th style="width: 20%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th>{{ user.userId }}</th>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.departmentId }}</td>
+        <td>
+          <button type="button" class="btn btn-danger mr-1" (click)="deleteUser(user.userId)">Удалить</button>
+          <button type="button" class="btn btn-info" (click)="editUser(user.userId)">Изменить</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary mr-1" (click)="addUser()">Добавить пользователя</button>
+  <button type="button" class="btn btn-primary" (click)="getUsers()">Обновить</button>
+</div>

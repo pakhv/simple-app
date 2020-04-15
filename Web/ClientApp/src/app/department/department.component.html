@@ -1,0 +1,28 @@
+<h2 id="tableLabel">Отделы</h2>
+
+<p *ngIf="!departments"><em>Loading...</em></p>
+
+<div>
+  <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="departments">
+    <thead class="thead-dark">
+      <tr>
+        <th style="width: 10%">Id</th>
+        <th style="width: 70%">Название</th>
+        <th style="width: 20%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <th>{{ department.departmentId }}</th>
+        <td>{{ department.name }}</td>
+        <td>
+          <button type="button" class="btn btn-danger mr-1" (click)="deleteDepartment(department.departmentId)">Удалить</button>
+          <button type="button" class="btn btn-info" (click)="editDepartment(department.departmentId)">Изменить</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-primary mr-1" (click)="addDepartment()">Добавить отдел</button>
+  <button type="button" class="btn btn-primary" (click)="getDepartments()">Обновить</button>
+</div>

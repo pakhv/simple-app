@@ -1,0 +1,14 @@
+<h2>Редактирование/Создание отдела</h2>
+<br>
+
+<div class="row">
+    <div class="col-2">
+        <span class="align-bottom">Название отдела</span></div>
+    <div>
+        <input type="text" [(ngModel)]="depName" class="form-control mr-1" placeholer="Название отдела">
+    </div>
+</div>
+
+<br>
+<button type="button" class="btn btn-primary mr-1" (click)="saveDepartment()" [disabled]="!depValid()">Сохранить</button>
+<button type="button" class="btn btn-danger mr-1" (click)="cancel()">Отмена</button>
